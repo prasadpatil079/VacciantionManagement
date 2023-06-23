@@ -1,5 +1,6 @@
 package com.example.vaccineManagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jdk.jfr.Timestamp;
 import org.hibernate.annotations.CreationTimestamp;
@@ -21,6 +22,7 @@ public class Dose {
 
     @OneToOne
     @JoinColumn
+    @JsonIgnore
     private User user;
 
     public User getUser() {

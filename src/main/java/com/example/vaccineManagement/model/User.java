@@ -1,6 +1,7 @@
 package com.example.vaccineManagement.model;
 
 import com.example.vaccineManagement.Enums.Gender;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.web.WebProperties;
@@ -26,6 +27,7 @@ public class User {
     private Gender gender;
     private String mobileNO;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     private Dose dose;
 
