@@ -1,0 +1,8 @@
+// give the list of all doctors at a particular center(centerId)//done
+// give the list of all male doctors at a particular center(centerId)//done
+// give the list of all females doctors at a particular center(centerId)//done
+// give the list of all male doctors above age 40 at a particular center(centerId)//done
+// get all the doctors who have more than 10 appointment//done
+// get all the male doctors whose age is above 40//done
+// get the ratio of male to female doctors//done
+//update the details based on email id of the doctor
