@@ -6,6 +6,9 @@ import com.example.vaccineManagement.model.VaccinationCenter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class VaccinationService {
 
@@ -17,5 +20,19 @@ public class VaccinationService {
         }
         vaccinationCenterRepository.save(vaccinationCenter);
         return "Center Added Successfully"+ vaccinationCenter.getAddress();
+    }
+
+    public List<VaccinationCenter> getcenter() {
+        List<VaccinationCenter> list=vaccinationCenterRepository.findAll();
+        List<VaccinationCenter> Vclist=new ArrayList<>();
+        for(VaccinationCenter vc:list){
+            if(vc.getDoctorList().size()>5){
+                Vclist.add(vc);
+            }
+        }
+        if(Vclist.size()==0){
+            throw new RuntimeException("NO centers found");
+        }
+        return Vclist;
     }
 }

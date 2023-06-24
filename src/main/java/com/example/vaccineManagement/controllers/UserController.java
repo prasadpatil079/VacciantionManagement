@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.xml.crypto.Data;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -34,4 +35,6 @@ public class UserController {
         User user=userService.getUserByEmail(emailID);
         return user;
     }
+
+
 }
